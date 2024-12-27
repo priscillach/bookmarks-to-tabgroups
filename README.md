@@ -1,2 +1,2 @@
 # bookmarks-to-tabgroups
-Auto generate import json for tab-groups-extension(https://chromewebstore.google.com/detail/tab-groups-extension/nplimhmoanghlebhdiboeellhgmgommi?) by chrome bookmarks or uploaded bookmarks html file.
+Auto generate import json for tab-groups-extension(https://chromewebstore.google.com/detail/tab-groups-extension/nplimhmoanghlebhdiboeellhgmgommi) by chrome bookmarks or uploaded bookmarks html file.

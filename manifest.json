@@ -14,5 +14,12 @@
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     }
-  }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "homepage_url": "https://github.com/[your-username]/bookmarks-to-tabgroups",
+  "options_page": "privacy-policy.html"
 } 
