@@ -1,0 +1,18 @@
+.container {
+  width: 300px;
+  padding: 20px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3367d6;
+} 

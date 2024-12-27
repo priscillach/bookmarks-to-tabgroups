@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookmarks to Tab Groups</title>
+  <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Bookmarks to Tab Groups Converter</h2>
+    <div class="method-section">
+      <h3>Method 1: Direct Convert</h3>
+      <button id="convertButton">Convert Current Bookmarks</button>
+    </div>
+    
+    <div class="method-section">
+      <h3>Method 2: From HTML File</h3>
+      <input type="file" id="bookmarksFile" accept=".html">
+      <button id="convertFileButton">Convert from File</button>
+    </div>
+
+    <div id="errorMessage" class="error-message"></div>
+  </div>
+  <script src="../js/converter.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html> 
