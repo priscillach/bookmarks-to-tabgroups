@@ -4,22 +4,40 @@ class BookmarksEditor {
         this.groupsData = new Map();    // 存储所有分组数据
         this.selectedBookmark = null;
         
+        // 等待 DOM 完全加载后再初始化
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.initialize());
+        } else {
+            this.initialize();
+        }
+    }
+
+    initialize() {
+        // 先初始化所有 DOM 元素引用
         this.initializeElements();
+        
+        // 确保所有必需的元素都存在
+        if (!this.groupsList || !this.bookmarksList || !this.bookmarkEditor) {
+            console.error('Required DOM elements not found');
+            return;
+        }
+
+        // 然后初始化事件监听和加载书签
         this.initializeEventListeners();
-        this.loadBookmarksFromSource();
-        this.bookmarkEditor = document.querySelector('.bookmark-editor');
-        this.groupsList = document.querySelector('.groups-list');
-        this.addGroupBtn = document.getElementById('addGroupBtn');
         this.initializeGroupEvents();
+        this.loadBookmarksFromSource();
     }
 
     initializeElements() {
         this.groupsPanel = document.querySelector('.groups-panel');
+        this.groupsList = document.querySelector('.groups-list');
         this.bookmarksList = document.querySelector('.bookmarks-list');
+        this.bookmarkEditor = document.querySelector('.bookmark-editor');
         this.methodSelect = document.getElementById('methodSelect');
         this.targetSelect = document.getElementById('targetSelect');
         this.valueInput = document.getElementById('valueInput');
         this.exportBtn = document.getElementById('exportBtn');
+        this.addGroupBtn = document.getElementById('addGroupBtn');
     }
 
     initializeEventListeners() {
@@ -226,7 +244,7 @@ class BookmarksEditor {
         }
         // 切换文件夹时隐藏规则编辑器
         this.hideEditor();
-    }
+        }
 
     createBookmarkElement(bookmark) {
         const element = document.createElement('div');
@@ -462,5 +480,5 @@ class BookmarksEditor {
     }
 }
 
-// 初始化编辑器
+// 创建编辑器实例
 new BookmarksEditor(); 
