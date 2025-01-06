@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmarks Editor</title>
+    <link rel="stylesheet" href="bookmarks.css">
+</head>
+<body>
+    <div class="container">
+        <div class="bookmarks-container">
+            <div class="groups-panel">
+                <div class="groups-header">
+                    <h3>Folders</h3>
+                    <button id="addGroupBtn">+ New Folder</button>
+                </div>
+                <div class="groups-list">
+                    <!-- 分组列表将在这里动态生成 -->
+                </div>
+            </div>
+            <div class="bookmarks-panel">
+                <div class="bookmarks-list">
+                    <!-- 书签列表将在这里动态生成 -->
+                </div>
+                <div class="bookmark-editor">
+                    <h3>Tab Group Rules</h3>
+                    <div class="editor-form">
+                        <div class="form-group">
+                            <label>Method:</label>
+                            <select id="methodSelect">
+                                <option value="includes">includes</option>
+                                <option value="startsWith">startsWith</option>
+                                <option value="endsWith">endsWith</option>
+                                <option value="equal">equal</option>
+                                <option value="regex">regex</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Target:</label>
+                            <select id="targetSelect">
+                                <option value="hostname">hostname</option>
+                                <option value="href">href</option>
+                                <option value="page-title">page title</option>
+                                <option value="page-title-ignore-case">page title (ignore case)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Value:</label>
+                            <input type="text" id="valueInput">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button id="exportBtn">Export Rules</button>
+        </div>
+    </div>
+    <script src="../js/converter.js"></script>
+    <script src="bookmarks.js"></script>
+</body>
+</html> 

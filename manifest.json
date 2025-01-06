@@ -5,7 +5,11 @@
   "description": "Convert Chrome bookmarks to Tab Groups rules",
   "permissions": [
     "bookmarks",
-    "downloads"
+    "downloads",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.google.com/"
   ],
   "action": {
     "default_popup": "popup/popup.html",
@@ -20,6 +24,10 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
+  "web_accessible_resources": [{
+    "resources": ["bookmarks/*"],
+    "matches": ["<all_urls>"]
+  }],
   "homepage_url": "https://github.com/[your-username]/bookmarks-to-tabgroups",
   "options_page": "privacy-policy.html"
 } 
