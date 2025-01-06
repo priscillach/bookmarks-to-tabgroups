@@ -237,14 +237,34 @@ class BookmarksEditor {
 
     renderBookmarks(bookmarkIds) {
         this.bookmarksList.innerHTML = '';
+        
+        // 如果没有书签，直接隐藏编辑器并返回
+        if (!bookmarkIds || bookmarkIds.length === 0) {
+            this.hideEditor();
+            return;
+        }
+
         for (const id of bookmarkIds) {
             const bookmark = this.bookmarksData.get(id);
             const bookmarkElement = this.createBookmarkElement(bookmark);
             this.bookmarksList.appendChild(bookmarkElement);
         }
-        // 切换文件夹时隐藏规则编辑器
-        this.hideEditor();
+
+        // 自动选中第一个书签
+        const firstBookmark = this.bookmarksData.get(bookmarkIds[0]);
+        if (firstBookmark) {
+            const firstBookmarkElement = this.bookmarksList.querySelector('.bookmark-item');
+            if (firstBookmarkElement) {
+                // 触发选中效果
+                firstBookmarkElement.classList.add('active');
+                this.selectedBookmark = firstBookmark;
+                this.updateEditorForm(firstBookmark);
+                this.showEditor();
+            }
+        } else {
+            this.hideEditor();
         }
+    }
 
     createBookmarkElement(bookmark) {
         const element = document.createElement('div');
