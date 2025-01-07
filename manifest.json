@@ -4,9 +4,7 @@
   "version": "1.1",
   "description": "Convert Chrome bookmarks to Tab Groups rules",
   "permissions": [
-    "bookmarks",
-    "downloads",
-    "tabs"
+    "bookmarks"
   ],
   "host_permissions": [
     "https://www.google.com/"
